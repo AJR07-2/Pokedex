@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct Profile: View {
-    @State private var name: String = ""
+    @State public var name: String = ""
     var body: some View {
         VStack{
-            Text("Profile")
-                .font(.bold(.title)())
             Text("Input ur chosen name:")
             TextField("", text: $name)
         }
