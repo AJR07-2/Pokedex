@@ -24,6 +24,8 @@ struct AddFriends: View {
                         .font(.bold(.subheadline)())
                     TextField("", text: $name)
                 }
+                .padding()
+                .frame(width: 300, height: 50, alignment: .center)
                 .border(Color.black)
                 
                 HStack{
@@ -31,6 +33,8 @@ struct AddFriends: View {
                         .font(.bold(.subheadline)())
                     TextField("", text: $rating)
                 }
+                .padding()
+                .frame(width: 300, height: 50, alignment: .center)
                 .border(Color.black)
                 
                 HStack{
@@ -38,6 +42,8 @@ struct AddFriends: View {
                         .font(.bold(.subheadline)())
                     TextField("", text: $iconName)
                 }
+                .padding()
+                .frame(width: 300, height: 50, alignment: .center)
                 .border(Color.black)
                 
                 HStack{
@@ -45,6 +51,8 @@ struct AddFriends: View {
                         .font(.bold(.subheadline)())
                     TextField("", text: $organisation)
                 }
+                .padding()
+                .frame(width: 300, height: 50, alignment: .center)
                 .border(Color.black)
                 
             }
@@ -55,8 +63,11 @@ struct AddFriends: View {
                     
                     var friendToPassIn = friends
                     friendToPassIn.append(Friends(id: UUID(), name: name, rating: ratingInt!, iconName: iconName, organisation: organisation))
+                    
+                    print(friendToPassIn)
+                    
                     let UD = UserDefaults.standard
-                    UD.setValue(friends, forKey: "Friends")
+                    UD.setValue(friendToPassIn, forKey: "Friends")
                 } else {
                     warning = true
                 }
