@@ -11,6 +11,8 @@ struct Friends: Identifiable{
     var id = UUID()
     var name: String
     var rating: Int
+    var iconName: String
+    var organisation: String
 }
 
 struct User: Identifiable{
