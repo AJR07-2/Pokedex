@@ -9,33 +9,46 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var friends = [Friend(name: "Enzo",
+    @State var friends = [Friend(name: "Ritesh",
                           icon: "zzz",
                           school: "Unknown sk00l",
-                          slothImage: "sloth3"),
-                   Friend(name: "Daksh",
+                          slothImage: "sloth3",
+                          types: [.ice, .fire]),
+                   Friend(name: "Yi Kai",
                           icon: "swift",
-                          school: "SST",
-                          slothImage: "sloth2"),
-                   Friend(name: "Celeste",
+                          school: "Another School",
+                          slothImage: "sloth2",
+                          types: [.electric, .grass, .ice]),
+                   Friend(name: "Hraday",
                           icon: "wifi",
-                          school: "DHS",
-                          slothImage: "sloth1")]
+                          school: "Yet Another School",
+                          slothImage: "sloth1",
+                          types: [.normal])
+                    ]
 
     
     var body: some View {
         NavigationView {
-            List(0..<friends.count) { index in
+            List (0..<friends.count) { index in
                 NavigationLink(destination: FriendDetailView(friend: $friends[index])) {
                     Image(systemName: friends[index].icon)
+                    
                     VStack(alignment: .leading) {
                         Text(friends[index].name)
-                            .font(.headline)
-                        Text(friends[index].school)
-                            .font(.subheadline)
-                            .foregroundColor(.gray)
-                    }
+                            .bold()
+                        
+                        HStack {
+                            Text(friends[index].school)
+                            
+                            Spacer()
+                            
+                            ForEach(friends[index].types, id: \.rawValue) { type in
+                                Image(systemName: type.getSymbolName())
+                            }
 
+                        }
+                        .foregroundColor(.gray)
+                    }
                 }
             }
             .navigationTitle("Friends")

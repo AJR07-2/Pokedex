@@ -17,7 +17,9 @@ struct Friend: Identifiable {
     
     var slothImage: String
     
-    var attack: Double = Double.random(in: 0...15)
-    var defence: Double = Double.random(in: 0...15)
+    var attack: Double = .random(in: 0...15)
+    var defence: Double = .random(in: 0...15)
+    
+    var types: [FriendType]
     
 }
