@@ -1,10 +1,3 @@
-//
-//  FriendType.swift
-//  Friends
-//
-//  Created by YJ Soon on 10/7/21.
-//
-
 import Foundation
 
 enum FriendType: String {

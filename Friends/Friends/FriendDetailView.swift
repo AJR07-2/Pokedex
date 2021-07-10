@@ -1,10 +1,3 @@
-//
-//  FriendDetailView.swift
-//  Friends
-//
-//  Created by YJ Soon on 3/7/21.
-//
-
 import SwiftUI
 
 let heroPicHeight: CGFloat = 300

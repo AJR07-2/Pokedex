@@ -1,59 +1,70 @@
-//
-//  ContentView.swift
-//  Friends
-//
-//  Created by YJ Soon on 3/7/21.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     
-    @State var friends = [Friend(name: "Ritesh",
-                          icon: "zzz",
-                          school: "Unknown sk00l",
-                          slothImage: "sloth3",
-                          types: [.ice, .fire]),
-                   Friend(name: "Yi Kai",
-                          icon: "swift",
-                          school: "Another School",
-                          slothImage: "sloth2",
-                          types: [.electric, .grass, .ice]),
-                   Friend(name: "Hraday",
-                          icon: "wifi",
-                          school: "Yet Another School",
-                          slothImage: "sloth1",
-                          types: [.normal])
-                    ]
-
+    @State var friends = [Friend(name: "YJ",
+                                 icon: "zzz",
+                                 school: "Tinkercademy",
+                                 slothImage: "sloth3",
+                                 attack: 10,
+                                 defence: 5,
+                                 types: [.ice, .fire]),
+                          Friend(name: "Jia Chen",
+                                 icon: "swift",
+                                 school: "Ngee Ann Poly",
+                                 slothImage: "sloth2",
+                                 attack: 15,
+                                 defence: 15,
+                                 types: [.electric, .ice]),
+                          Friend(name: "Zerui",
+                                 icon: "wifi",
+                                 school: "NUS High",
+                                 slothImage: "sloth1",
+                                 attack: 6,
+                                 defence: 3,
+                                 types: [.normal, .grass, .fire])]
+    
+    @State var isSheetPresented = false
     
     var body: some View {
         NavigationView {
-            List (0..<friends.count) { index in
-                NavigationLink(destination: FriendDetailView(friend: $friends[index])) {
-                    Image(systemName: friends[index].icon)
+            List {
+                ForEach(friends) { friend in
+                    let friendIndex = friends.firstIndex(of: friend)!
                     
-                    VStack(alignment: .leading) {
-                        Text(friends[index].name)
-                            .bold()
+                    NavigationLink(destination: FriendDetailView(friend: $friends[friendIndex])) {
+                        Image(systemName: friend.icon)
                         
-                        HStack {
-                            Text(friends[index].school)
-                            
-                            Spacer()
-                            
-                            ForEach(friends[index].types, id: \.rawValue) { type in
-                                Image(systemName: type.getSymbolName())
+                        VStack(alignment: .leading) {
+                            Text(friend.name)
+                                .bold()
+                            HStack {
+                                Text(friend.school)
+                                
+                                Spacer()
+                                
+                                ForEach(friend.types, id: \.rawValue) { type in
+                                    Image(systemName: type.getSymbolName())
+                                }
                             }
-
                         }
-                        .foregroundColor(.gray)
                     }
+                }.onDelete { offsets in
+                    friends.remove(atOffsets: offsets)
+                }.onMove { source, destination in
+                    friends.move(fromOffsets: source, toOffset: destination)
                 }
             }
             .navigationTitle("Friends")
+            .navigationBarItems(leading: EditButton(),
+                                trailing: Button(action: {
+                isSheetPresented = true
+            }, label: {
+                Image(systemName: "plus")
+            }))
+        }.sheet(isPresented: $isSheetPresented) {
+            NewFriendView(friends: $friends)
         }
-
     }
 }
 

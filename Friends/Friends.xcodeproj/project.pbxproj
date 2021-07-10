@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A9DE7AA2699430D00118631 /* AddFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9DE7A92699430D00118631 /* AddFriend.swift */; };
 		AF04FF9D268FF177004D3E76 /* FriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04FF9C268FF177004D3E76 /* FriendsApp.swift */; };
 		AF04FF9F268FF177004D3E76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF04FF9E268FF177004D3E76 /* ContentView.swift */; };
 		AF04FFA1268FF178004D3E76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF04FFA0268FF178004D3E76 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A9DE7A92699430D00118631 /* AddFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriend.swift; sourceTree = "<group>"; };
 		AF04FF99268FF177004D3E76 /* Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF04FF9C268FF177004D3E76 /* FriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsApp.swift; sourceTree = "<group>"; };
 		AF04FF9E268FF177004D3E76 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				AF6EB6C3269931F100AEA396 /* FriendType.swift */,
 				AF04FF9C268FF177004D3E76 /* FriendsApp.swift */,
 				AF04FF9E268FF177004D3E76 /* ContentView.swift */,
+				3A9DE7A92699430D00118631 /* AddFriend.swift */,
 				AF04FFAD268FF517004D3E76 /* FriendDetailView.swift */,
 				AF04FFAB268FF1EC004D3E76 /* Friend.swift */,
 				AF04FFA0268FF178004D3E76 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				AF6EB6C4269931F100AEA396 /* FriendType.swift in Sources */,
 				AF04FFAC268FF1EC004D3E76 /* Friend.swift in Sources */,
 				AF04FF9F268FF177004D3E76 /* ContentView.swift in Sources */,
+				3A9DE7AA2699430D00118631 /* AddFriend.swift in Sources */,
 				AF04FF9D268FF177004D3E76 /* FriendsApp.swift in Sources */,
 				AF04FFAE268FF517004D3E76 /* FriendDetailView.swift in Sources */,
 			);

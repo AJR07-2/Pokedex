@@ -1,10 +1,3 @@
-//
-//  FriendsApp.swift
-//  Friends
-//
-//  Created by YJ Soon on 3/7/21.
-//
-
 import SwiftUI
 
 @main
